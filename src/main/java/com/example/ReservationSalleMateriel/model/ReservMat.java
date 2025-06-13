@@ -12,7 +12,7 @@ import jakarta.persistence.OneToOne;
 public class ReservMat {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private LocalDate cree_Le;
     private LocalDate date;
     private String horaire;
@@ -23,9 +23,9 @@ public class ReservMat {
 
     @OneToOne
     private Enseignant enseignantId;
-    public ReservMat(int id, LocalDate cree_Le, LocalDate date, String horaire, String state, MaterielPedagogique matId,
+    public ReservMat( LocalDate cree_Le, LocalDate date, String horaire, String state, MaterielPedagogique matId,
             Enseignant enseignantId) {
-        this.id = id;
+        
         this.cree_Le = cree_Le;
         this.date = date;
         this.horaire = horaire;
@@ -37,10 +37,10 @@ public class ReservMat {
     public ReservMat(){
 
     }
-    public int getId() {
+    public Integer getId() {
         return id;
     }
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
     public LocalDate getCree_Le() {

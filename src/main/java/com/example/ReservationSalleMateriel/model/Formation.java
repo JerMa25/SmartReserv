@@ -19,7 +19,7 @@ public class Formation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int  id;
+    private Integer  id;
 
      @Column
     private String nom;
@@ -33,8 +33,8 @@ public class Formation {
 
     @OneToOne
     private Enseignant responsableId;
-    public Formation(int id, String nom, int nbParticipants, LocalDate date, String horaire,Enseignant responsableId) {
-        this.id = id;
+    public Formation( String nom, int nbParticipants, LocalDate date, String horaire,Enseignant responsableId) {
+       
         this.nom = nom;
         this.nbParticipants = nbParticipants;
         this.date = date;
@@ -45,10 +45,10 @@ public class Formation {
    public  Formation(){
 
     }
-    public int getId() {
+    public Integer getId() {
         return id;
     }
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
     public String getNom() {

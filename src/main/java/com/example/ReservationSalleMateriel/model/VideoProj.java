@@ -1,17 +1,23 @@
 package com.example.ReservationSalleMateriel.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class VideoProj extends MaterielPedagogique{
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private String resolution;
     private String type_de_lampe;
     private String marque_et_modele;
     private int frequence;
     public VideoProj(int id, String nom, String resolution, String type_de_lampe, String marque_et_modele, int frequence) {
         
-        super(id,nom);
+        super(nom);
         this.resolution = resolution;
         this.type_de_lampe = type_de_lampe;
         this.marque_et_modele = marque_et_modele;

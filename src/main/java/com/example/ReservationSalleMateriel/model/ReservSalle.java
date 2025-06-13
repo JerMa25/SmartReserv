@@ -1,30 +1,39 @@
 package com.example.ReservationSalleMateriel.model;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeParseException;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 
+
+import jakarta.persistence.Id;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 @Entity
-
+@Table
 public class ReservSalle {
    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @Column(columnDefinition = "INT AUTO_INCREMENT")
+    private Integer id;
     private LocalDate cree_Le;
     private LocalDate date;
     private String horaire;
     private String state;
-    @OneToOne
+    @ManyToOne
     private SalleDeCours salleId;
-    @OneToOne
+    @ManyToOne
     private Enseignant enseignantId;
-    public ReservSalle(int id, LocalDate cree_Le, LocalDate date, String horaire, String state, SalleDeCours salleId,
+    public ReservSalle( LocalDate cree_Le, LocalDate date, String horaire, String state, SalleDeCours salleId,
             Enseignant enseignantId) {
-        this.id = id;
+        
         this.cree_Le = cree_Le;
         this.date = date;
         this.horaire = horaire;
@@ -36,10 +45,10 @@ public class ReservSalle {
    public  ReservSalle(){
 
     }
-    public int getId() {
+    public Integer getId() {
         return id;
     }
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
     public LocalDate getCree_Le() {
@@ -78,6 +87,9 @@ public class ReservSalle {
     public void setEnseignantId(Enseignant enseignantId) {
         this.enseignantId = enseignantId;
     }
+
+
+
 
     
 

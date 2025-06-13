@@ -28,20 +28,20 @@ public class Enseignant {
     @Column
     private String tel;
     @Column
-    private String chaine;
+    private String email;
 
     public Enseignant(){
 
     }
     
-    public Enseignant(int matricule, String nom, String prenom, int age, String sex, String tel, String chaine) {
+    public Enseignant(int matricule, String nom, String prenom, int age, String sex, String tel, String email) {
         this.matricule = matricule;
         this.nom = nom;
         this.prenom = prenom;
         this.age = age;
         this.sex = sex;
         this.tel = tel;
-        this.chaine = chaine;
+        this.email = email;
     }
 
     public int getMatricule() {
@@ -80,11 +80,11 @@ public class Enseignant {
     public void setTel(String tel) {
         this.tel = tel;
     }
-    public String getChaine() {
-        return chaine;
+    public String getEmail() {
+        return email;
     }
-    public void setChaine(String chaine) {
-        this.chaine = chaine;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     

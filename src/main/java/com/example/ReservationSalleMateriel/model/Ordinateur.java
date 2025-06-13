@@ -13,7 +13,7 @@ public class Ordinateur extends MaterielPedagogique{
 
     }
     public Ordinateur(String id, String nom,String processeur, int stockage, String memoire) {
-       
+       super(nom);
         this.processeur = processeur;
         this.stockage = stockage;
         this.memoire = memoire;
