@@ -144,6 +144,16 @@ export default function MesReservations() {
               backgroundColor: "#dc2626"
             }
           }}
+          onClick={() => {
+            axios.put(`http://localhost:8080/api/reservationSalle/cancel/${reservsalle.id}`)
+            .then(() => {
+              toast.success("Réservation de salle supprimée !");
+              setReservationsSalle((prev) => prev.filter(r => r.id !== reservsalle.id));
+            })
+            .catch(() => {
+              toast.error("Erreur lors de la suppression de la réservation.");
+            });
+          }}
         >
           Supprimer
         </Button>
@@ -256,6 +266,16 @@ export default function MesReservations() {
             '&:hover': {
               backgroundColor: "#dc2626"
             }
+          }}
+          onClick={() => {
+            axios.put(`http://localhost:8080/api/reservationMat/cancel/${reservmat.id}`)
+            .then(() => {
+              toast.success("Réservation de matériel supprimée !");
+              setReservationsMat((prev) => prev.filter(r => r.id !== reservmat.id));
+            })
+            .catch(() => {
+              toast.error("Erreur lors de la suppression de la réservation.");
+            });
           }}
         >
           Supprimer

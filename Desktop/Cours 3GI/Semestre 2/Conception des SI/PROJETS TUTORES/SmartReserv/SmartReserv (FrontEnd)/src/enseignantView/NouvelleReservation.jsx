@@ -315,7 +315,7 @@ export default function NouvelleReservation() {
                   <strong>Capacité:</strong> {salle.nbPlaces}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  Description : {salle.description}
+                  Description : {salle.description || "Aucune description"}
                 </Typography>
               </Box>
             </Box>
